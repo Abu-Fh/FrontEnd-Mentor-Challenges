@@ -1,0 +1,38 @@
+:root {
+  --fs-base: 1.125rem;
+
+  --white: hsl(0, 0%, 100%);
+  --pale-white: hsl(0, 0%, 90%);
+  --light-pale-white: hsla(0, 0%, 100%,0.6);
+  --light-red: hsl(0, 100%, 67%);
+  --orangey-yellow: hsl(39, 100%, 56%);
+  --green-teal: hsl(166, 100%, 37%);
+  --cobalt-blue: hsl(234, 85%, 45%);
+
+  --bg-white: hsl(0, 0%, 100%);
+  --bg-light-red: hsla(0, 100%, 67%,0.1);
+  --bg-orangey-yellow: hsla(39, 100%, 56%,0.1);
+  --bg-green-teal: hsla(166, 100%, 37%,0.1);
+  --bg-cobalt-blue: hsla(234, 85%, 45%,0.1);
+  --bg-dark-gray-blue: hsl(224, 30%, 27%);
+
+  --light-slate-blue-background: hsl(252, 100%, 67%);
+  --light-royal-blue-background: hsl(241, 81%, 54%);
+
+  --violet-blue-circle: hsla(256, 72%, 46%, 1);
+  --persian-blue-circle: hsla(241, 72%, 46%, 0);
+
+  --background-gradient: linear-gradient(
+    var(--light-slate-blue-background),
+    var(--light-royal-blue-background) 
+  );
+  --circle-gradient: linear-gradient(
+    var(--violet-blue-circle),
+    var(--persian-blue-circle)
+  );
+
+  --ff: "Hanken Grotesk";
+}
+
+@media (prefers-color-scheme: dark) {
+}

@@ -1,0 +1,40 @@
+@media (min-width: 40rem){
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .result{
+        max-width: 40rem;
+        display: flex;
+        border-radius: 24px;
+        box-shadow: 0 25px 50px hsla(240, 100%, 50%, 0.2);
+    }
+
+    .result__result{
+        padding-block: 2rem !important;
+        padding-inline: 2rem !important;
+        flex: 1 1 0%;
+        border-radius: 24px 24px 24px 24px !important;
+    }
+
+    .result__result-heading{
+        font-size: 1.25rem !important;
+    }
+
+    .result__score-display span{
+        font-size: 5rem !important;
+    }
+
+    .result__score-display p{
+        font-size: 1rem !important;
+    }
+
+    .result__summary{
+        padding-block: 2rem !important;
+        padding-inline: 2rem !important;
+        flex: 1 1 0%;
+    }
+}
