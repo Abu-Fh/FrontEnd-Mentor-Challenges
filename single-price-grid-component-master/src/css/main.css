@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Lexend+Deca:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "./theme.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+    color-scheme: light dark;
+}
+
+body {
+  font-family: var(--ff);
+}
+
+main {
+  padding-block: 4rem;
+  padding-inline: 2rem;
+}
+
+.membership-card {
+  @apply shadow-xl;
+  max-width: 42rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+.membership-card__intro,
+.membership-card__subscription,
+.membership-card__features {
+  padding-block: 1.5rem;
+  padding-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.membership-card__intro {
+  border-radius: 8px 8px 0px 0px;
+}
+
+.membership-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.875rem;
+}
+
+.membership-card__title--join {
+  color: var(--primary-green-400);
+}
+
+.membership-card__guarantee {
+  color: var(--secondary-pear);
+}
+
+.membership-card__description {
+  color: var(--primary-green-400);
+}
+
+.membership-card__subscription {
+  background-color: var(--bg-green-500);
+}
+
+.membership-card__title--subscription {
+  color: white;
+}
+
+.membership-card__price-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.membership-card__price-container strong {
+  font-size: 2rem;
+  color: white;
+}
+
+.membership-card__price-container span {
+  font-size: 0.875rem;
+  color: var(--bg-teal-100);
+}
+
+.membership-card__price-info {
+  color: white;
+}
+
+.membership-card__sign-up {
+  @apply shadow-lg;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: var(--secondary-pear);
+  text-align: center;
+  color: white;
+}
+
+.membership-card__features {
+  border-radius: 0px 0px 8px 8px;
+  background-color: var(--bg-green-50-75);
+}
+
+.membership-card__title--why-us {
+  color: white;
+}
+
+.membership-card__feature-list{
+    color: var(--bg-teal-100);
+}
+
+
+

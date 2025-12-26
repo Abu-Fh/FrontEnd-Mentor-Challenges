@@ -1,0 +1,25 @@
+@media (min-width: 48rem) {
+  .membership-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "join-community join-community" 
+      "subscription why-us";
+    border-radius: 8px;
+  }
+
+  .membership-card__intro {
+    grid-area: join-community;
+    border-radius: 8px 8px 0px 0px;
+  }
+
+  .membership-card__subscription {
+    grid-area: subscription;
+    border-radius: 0px 0px 0px 8px;
+  }
+
+  .membership-card__features {
+    grid-area: why-us;
+    border-radius: 0px 0px 8px 0px;
+  }
+}

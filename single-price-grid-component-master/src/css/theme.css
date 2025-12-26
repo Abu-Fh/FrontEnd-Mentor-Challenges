@@ -1,0 +1,14 @@
+:root {
+  --fs-base: 1rem;
+
+    --primary-teal-500: hsl(179, 62%, 43%);
+    --primary-green-400: hsl(179, 62%, 43%);
+
+    --bg-teal-100: hsl(204, 43%, 93%);
+    --bg-green-500: hsl(218, 22%, 67%);
+    --bg-green-50-75: hsl(218, 22%, 75%);
+
+    --secondary-pear: hsl(76, 69%, 60%);
+
+  --ff: "Karla", system-ui, sans-serif;
+}

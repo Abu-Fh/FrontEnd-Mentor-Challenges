@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+  <title>Frontend Mentor | Single Price Grid Component</title>
+
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <article class="membership-card">
+      <section class="membership-card__intro" aria-labelledby="title-join">
+        <h2 class="membership-card__title membership-card__title--join" id="title-join">
+          Join our community
+        </h2>
+        <strong class="membership-card__guarantee">30-day, hassle-free money back guarantee</strong>
+        <p class="membership-card__description">
+          Gain access to our full library of tutorials along with expert code
+          reviews. Perfect for any developers who are serious about honing
+          their skills.
+        </p>
+      </section>
+
+      <section class="membership-card__subscription" aria-labelledby="title-subscription">
+        <h2 class="membership-card__title membership-card__title--subscription" id="title-subscription">
+          Monthly Subscription
+        </h2>
+        <div class="flex flex-col">
+          <div class="membership-card__price-container">
+            <strong>&dollar;29</strong>
+            <span>per month</span>
+          </div>
+          <p class="membership-card__price-info">
+            Full access for less than &dollar;1 per day
+          </p>
+        </div>
+        <a href="sign-up" class="membership-card__sign-up">
+          Sign Up
+        </a>
+      </section>
+
+      <section class="membership-card__features" aria-labelledby="title-why-us">
+        <h2 class="membership-card__title membership-card__title--why-us" id="title-why-us">
+          Why Us
+        </h2>
+        <ul class="membership-card__feature-list">
+          <li class="membership-card__feature-item">Tutorials by industry experts</li>
+          <li class="membership-card__feature-item">Peer &amp; expert code review</li>
+          <li class="membership-card__feature-item">Coding exercises</li>
+          <li class="membership-card__feature-item">Access to our GitHub repos</li>
+          <li class="membership-card__feature-item">Community forum</li>
+          <li class="membership-card__feature-item">Flashcard decks</li>
+          <li class="membership-card__feature-item">New videos every week</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+
+
+  <footer>
+    <p class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+        href="#">Abu-Fh</a>.
+    </p>
+  </footer>
+</body>
+
+</html>
