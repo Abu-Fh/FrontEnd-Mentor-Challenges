@@ -1,0 +1,68 @@
+@media(min-width:64rem){
+    main{
+        display: grid;
+        gap: 4rem;
+        grid-template-areas: "hero ratings"
+                            "reviews reviews";
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .hero{
+        grid-area: hero;
+    }
+
+    .hero__title{
+        @apply
+        text-start;
+    }
+
+    .hero__description{
+        @apply
+        text-start;
+    }
+
+    .ratings{
+        @apply
+        flex
+        flex-col
+        items-start
+        justify-center
+        gap-4;
+        grid-area: ratings;
+    }
+
+    .ratings__item{
+        @apply
+        w-3/5
+        flex
+        flex-row
+    }
+
+    .ratings__item:nth-child(2){
+        @apply
+        translate-x-16;
+    }
+
+    .ratings__item:nth-child(3){
+        @apply
+        translate-x-32;
+    }
+
+    .reviews{
+        @apply
+        flex
+        flex-row
+        gap-4;
+        grid-area: reviews;  
+    }
+
+    .review:nth-child(2){
+        @apply
+        translate-y-4;
+    }
+
+    .review:nth-child(3){
+        @apply
+        translate-y-8;
+    }
+}

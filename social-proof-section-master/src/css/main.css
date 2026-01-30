@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=League+Spartan:wght@100..900&family=Lexend+Deca:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "./theme.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-white;
+  background-image: url('../images/bg-pattern-top-desktop.svg'),
+                    url('../images/bg-pattern-bottom-desktop.svg');
+}
+
+main {
+  @apply m-auto
+  max-w-6xl
+    flex
+    flex-col
+    gap-8
+    px-4
+    py-10;
+}
+
+.hero__title {
+  @apply text-primary-dark
+    text-5xl
+    font-bold
+    text-center;
+}
+
+.hero__description {
+  @apply mt-4
+    text-neutral-gray
+    text-lg
+    text-center
+    font-semibold;
+}
+
+.ratings {
+  @apply flex
+    flex-col
+    gap-4;
+}
+
+.ratings__item {
+  @apply py-4
+    flex
+    flex-col
+    justify-center
+    items-center
+    bg-neutral-light
+    rounded-md;
+}
+
+.ratings__stars {
+  height: 24px;
+  max-width: 11.25rem;
+  width: 40%;
+  background-image:
+    url("../images/icon-star.svg"), url("../images/icon-star.svg"),
+    url("../images/icon-star.svg"), url("../images/icon-star.svg"),
+    url("../images/icon-star.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position-x: 00%, 20%, 40%, 60%, 80%;
+}
+
+.ratings__text {
+  @apply text-primary-dark
+    font-bold;
+}
+
+.reviews {
+  @apply flex
+    flex-col
+    gap-4;
+}
+
+.review {
+  @apply py-8
+    px-4
+    flex
+    flex-col
+    gap-4
+    bg-primary-dark
+    rounded-lg;
+}
+
+.review__author {
+  @apply flex
+    gap-4;
+}
+
+.review__author-image {
+  @apply h-12
+    w-12
+    rounded-full;
+}
+
+.review__author-name {
+  @apply text-white
+    font-bold;
+}
+
+.review__author-role {
+  @apply text-primary-accent;
+}
+
+.review__content {
+  @apply text-white;
+}
