@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=League+Spartan:wght@100..900&family=Lexend+Deca:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "./theme.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  color-scheme: light;
+}
+
+body{
+  @apply
+  bg-purple-100;
+  font-family: "Work Sans";
+}
+
+.bg-img{
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  height: 30vh;
+  background-image: url('../assets/images/background-pattern-mobile.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main{
+  @apply
+  px-4;
+}
+
+.faq{
+  @apply
+  max-w-xl
+  px-4
+  py-8
+  m-auto
+  mt-28
+  bg-white
+  rounded-lg
+  shadow-xl;
+}
+
+.faq__header{
+  @apply
+  flex
+  gap-8
+  items-center;
+}
+
+.faq__main-title{
+  @apply
+  text-4xl
+  font-bold;
+}
+
+.faq__content{
+  @apply
+  mt-8
+  flex
+  flex-col
+  gap-4;
+}
+
+.faq__item{
+  @apply
+  flex
+  flex-col
+  gap-4
+  cursor-pointer;
+}
+
+.faq__item:last-child > hr{
+  @apply
+  hidden;
+}
+
+.faq__icon-minus{
+  @apply
+  hidden;
+}
+
+.faq__question-container{
+  @apply
+  flex
+  items-center
+  justify-between
+  gap-8;
+}
+
+.faq__question{
+  @apply
+  text-lg
+  font-semibold;
+}
+
+.faq__answer{
+  @apply
+  hidden;
+}
+
+.faq__answer > p{
+  @apply
+  text-gray-600;
+}
+
+.faq__item:focus-within .faq__answer{
+  @apply
+  block;
+}
+
+.faq__item:focus-within .faq__icon-minus{
+  @apply
+  block;
+}
+
+.faq__item:focus-within .faq__icon-plus{
+  @apply
+  hidden;
+}
+
+
+
