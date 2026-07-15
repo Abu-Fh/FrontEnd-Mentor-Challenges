@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="stylesheet" href="./css/index.min.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Manrope:wght@200..800&display=swap"
+    rel="stylesheet" />
+
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <style>
+    .attribution {
+      font-size: 0.6875rem;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  
+  <main class="main">
+
+    <header class="header">
+      <a href="#">
+        <img src="./images/logo.svg" alt="Base Apparel Logo" class="header__logo" />
+      </a>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero__image-container">
+        <img aria-hidden="true" src="./images/hero-mobile.jpg" alt="hero section image"
+          class="hero__image hero__image--mobile" />
+      </div>
+
+      <div class="hero__main-content">
+        <h2 class="hero__heading" id="hero-heading">
+          <span>We're</span> coming soon
+        </h2>
+  
+        <p class="hero__description">
+          Hello fellow shoppers! We're currently building our new fashion
+          store. Add your email below to stay up-to-date with announcements
+          and our launch deals.
+        </p>
+  
+        <form action="/register" class="hero__register-form">
+          <div class="hero__register-group">
+            <label for="email" class="sr-only">Email Address</label>
+  
+            <div class="hero__input-container">
+              <input type="email" id="email" class="hero__register-input" placeholder="Email Address" />
+  
+              <button type="submit" class="hero__register-submit" aria-label="Register">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="20">
+                  <path fill="none" stroke="#FFF" stroke-width="2" d="M1 1l8.836 8.836L1 18.671" />
+                </svg>
+              </button>
+            </div>
+            <span class="hero__register-error hidden">Please provide a valid email</span>
+            <span class="hero__register-success hidden">Registration completed successfully</span>
+          </div>
+        </form>
+      </div>
+
+    </section>
+
+    <div class="aside-image">
+      <img src="./images/hero-desktop.jpg" class="aside-image__image" />
+    </div>
+
+  </main>
+
+  <!-- <footer class="attribution">
+
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Abu-Fh</a>.
+  </footer> -->
+  <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>

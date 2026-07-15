@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply font-sans;
+}
+
+.header{
+  @apply px-4 py-8;
+}
+
+.hero {
+
+  &__image{
+    @apply w-full object-cover;
+  }
+  
+  &__main-content{
+    @apply px-8 py-12 flex flex-col gap-8;
+  }
+
+  &__heading{
+    @apply font-semibold text-4xl text-center tracking-[0.3em] uppercase;
+
+    & > span {
+      @apply text-pink-400;
+    }
+  }
+
+  &__description{
+    @apply text-pink-400 font-semibold text-center;
+  }
+
+  &__input-container{
+    @apply relative w-full flex items-center;
+  }
+
+  &__register-input{
+    @apply w-full px-8 pr-16 py-4 border-pink-400 border-2 rounded-full;
+  }
+
+  &__register-submit{
+    @apply absolute h-full right-[-12px] bg-pink-400 px-8 py-4 rounded-full hover:bg-pink-500;
+  }
+
+  &__register-error{
+    @apply text-red-500 ml-8 mt-4;
+  }
+
+  &__register-success{
+    @apply text-yellow-500 ml-8 mt-4;
+  }
+
+}
+
+.aside-image{
+  @apply hidden;
+}
+
+@screen sm {
+  .main{
+    @apply max-w-screen-2xl m-auto;
+    display: grid;
+    grid-template-areas: "header aside-image"
+                          "hero aside-image";
+  }
+
+  .header{
+    @apply w-2/4 mx-auto;
+    grid-area: header;
+  }
+
+  .hero{
+    @apply w-2/4 mx-auto;
+    grid-area: hero;
+
+    &__main-content{
+      @apply gap-12 px-0;
+    }
+
+    &__heading{
+      @apply text-6xl text-start;
+    }
+
+    &__description{
+      @apply text-start;
+    }
+
+    &__register-input{
+      @apply pr-20;
+    }
+
+    &__register-submit{
+      @apply px-12;
+    }
+  }
+
+  .aside-image{
+    display: block;
+    grid-area: aside-image;
+
+    &__image{
+      @apply h-full object-cover;
+    }
+  }
+
+  .hero__image{
+    @apply hidden;
+  }
+
+}
