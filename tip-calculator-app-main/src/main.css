@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+Source - https://stackoverflow.com/a/23374725
+Posted by Richard Deeming, modified by community. See post 'Timeline' for change history
+Retrieved 2026-08-15, License - CC BY-SA 4.0
+*/
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+html {
+  font-weight: 700;
+}
+
+.app {
+  @apply py-10 bg-gray-200 min-h-dvh flex flex-col gap-8;
+}
+
+.heading {
+  @apply text-2xl uppercase tracking-widest text-gray-500 text-center;
+}
+
+.tip-calculator {
+  &__form {
+    @apply px-6 py-6 flex flex-col gap-8 rounded-2xl bg-white;
+
+    @media screen(sm){
+      @apply max-w-3xl m-auto flex-row;
+    }
+  }
+
+  &__column {
+    @apply flex flex-col flex-1 gap-4 justify-center;
+  }
+
+  &__label {
+    @apply text-gray-500;
+  }
+
+  &__label-wrapper{
+    @apply flex justify-between items-center;
+  }
+
+  &__input-wrapper {
+    @apply mt-2 relative flex justify-between items-center rounded-md;
+  }
+
+  &__icon {
+    @apply mx-4 absolute fill-gray-400;
+  }
+
+  &__input {
+    @apply w-full px-4 rounded-md bg-gray-50 text-end text-green-900 placeholder:text-end text-2xl focus:border-2 focus:border-green-400;
+
+    &--custom {
+      @apply px-4 ml-0 bg-gray-50 rounded-md placeholder:text-center placeholder:text-gray-500 hover:bg-white hover:cursor-pointer focus:bg-white focus:border-2 focus:border-green-400;
+    }
+  }
+
+  &__tip-options-container {
+    @apply mt-2 grid gap-4 grid-cols-2;
+  }
+
+  &__tip-option {
+    @apply px-2 py-2 bg-green-900 text-white text-2xl rounded-md hover:cursor-pointer hover:bg-gray-200;
+
+    &.active{
+      @apply bg-green-400;
+    }
+  }
+
+  &__result {
+    @apply px-6 py-6 flex flex-col flex-1 gap-4 bg-green-900 rounded-md;
+
+  }
+
+  &__result-row {
+    @apply flex justify-between items-center;
+  }
+
+  &__result-heading {
+    @apply text-white;
+  }
+
+  &__result-subheading {
+    @apply text-green-400;
+  }
+
+  &__amount {
+    @apply text-3xl text-green-400;
+  }
+
+  &__total {
+    @apply text-3xl text-green-400;
+  }
+
+  &__reset-button {
+    @apply px-2 py-2 mt-auto bg-green-400 text-green-900 hover:bg-gray-200 rounded-md uppercase;
+
+    &.disabled{
+        @apply opacity-20 cursor-not-allowed;
+    }
+  }
+
+  &__error-message {
+    @apply text-red-500;
+  }
+}
