@@ -1,0 +1,112 @@
+[
+    {
+        "notification_details": {
+            "type": "post_event",
+            "event": "react",
+            "post_id": 13,
+            "post_title": "My first tournament today!"
+        },
+        "notification_sender": {
+            "user_id": 7,
+            "user_name": "Mark Weeber",
+            "user_profile_img": "./assets/images/avatar-mark-webber.webp"
+        },
+        "notification_description": "reacted to your recent post",
+        "notification_date": "1m ago",
+        "notification_status": 0
+    },
+    {
+        "notification_details": {
+            "type": "user_event",
+            "event": "follow"
+        },
+        "notification_sender": {
+            "user_id": 6,
+            "user_name": "Angela Gray",
+            "user_profile_img": "./assets/images/avatar-angela-gray.webp"
+        },
+        "notification_description": "followed you",
+        "notification_date": "5m ago",
+        "notification_status": 0
+    },
+    {
+        "notification_details": {
+            "type": "group_event",
+            "event": "join",
+            "group_id": 12,
+            "group_title": "Chess Club"
+        },
+        "notification_sender": {
+            "user_id": 5,
+            "user_name": "Jacob Thompson",
+            "user_profile_img": "./assets/images/avatar-jacob-thompson.webp"
+        },
+        "notification_description": "has joined your group",
+        "notification_date": "1 day ago",
+        "notification_status": 0
+    },
+    {
+        "notification_details": {
+            "type": "user_event",
+            "event": "private_message",
+            "private_message_id": 31,
+            "private_message": "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game."
+        },
+        "notification_sender": {
+            "user_id": 4,
+            "user_name": "Rizky Hasanuddin",
+            "user_profile_img": "./assets/images/avatar-rizky-hasanuddin.webp"
+        },
+        "notification_description": "sent you a private message",
+        "notification_date": "5 days ago",
+        "notification_status": 1
+    },
+    {
+        "notification_details": {
+            "type": "picture_event",
+            "event": "comment",
+            "picture_id": 21,
+            "url": "./assets/images/image-chess.webp"
+        },
+        "notification_sender": {
+            "user_id": 3,
+            "user_name": "Kimberly Smith",
+            "user_profile_img": "./assets/images/avatar-kimberly-smith.webp"
+        },
+        "notification_description": "commented on your picture",
+        "notification_date": "1 weeks ago",
+        "notification_status": 1
+    },
+    {
+        "notification_details": {
+            "type": "post_event",
+            "event": "react",
+            "post_id": 12,
+            "post_title": "5 end-game strategies to increase your win rate"
+        },
+        "notification_sender": {
+            "user_id": 2,
+            "user_name": "Nathan Peterson",
+            "user_profile_img": "./assets/images/avatar-nathan-peterson.webp"
+        },
+        "notification_description": "reacted to your recent post 5 end-game strategies to increase your win rate",
+        "notification_date": "2 weeks ago",
+        "notification_status": 1
+    },
+    {
+        "notification_details": {
+            "type": "group_event",
+            "event": "leave",
+            "group_id": 11,
+            "group_title": "Chess Club"
+        },
+        "notification_sender": {
+            "user_id": 1,
+            "user_name": "Anna Kim",
+            "user_profile_img": "./assets/images/avatar-anna-kim.webp"
+        },
+        "notification_description": "left the group",
+        "notification_date": "2 weeks ago",
+        "notification_status": 1
+    }
+]

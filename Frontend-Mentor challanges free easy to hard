@@ -1,0 +1,95 @@
+__Seviye 1: DOM Manipülasyonu ve Event Temelleri
+
+HTML elemanlarını yakalama, CSS sınıflarını (class) uçurup kondurma ve tıklama olayları.
+
+    Article Preview Component [🎯 Senin Listen - ✅ TAMAMLANDI]: Butona basınca açılan kutu ve sayfa geneline tıklayınca o kutuyu kapatma mantığı.
+
+    FAQ Accordion: Tıklanan sorunun altındaki cevabı açıp diğerlerini kapatma (Accordion mantığı).
+
+    Interactive Rating Component: Seçilen butondaki değeri (puanı) hafızada tutup, sayfa değişince ekrana basma.
+
+    Base Apparel Coming Soon Page [🎯 Senin Listen]: İlk form doğrulama deneyimi. E-posta boş mu, @ işareti var mı kontrolü ve hata sınıfları ekleme.
+
+    Ping Coming Soon Page: Benzer bir form validasyonu; regex kullanarak dinamik hata mesajı yönetimi.
+
+    Intro Component with Sign-up Form: Çoklu input alanı (Ad, Soyad, Şifre, Email) doğrulaması ve her biri için ayrı hata mesajı tetikleme.
+
+    Notifications Page: "Tümünü okundu işaretle" butonuna basınca üstteki sayacı sıfırlama ve okunmamış bildirimlerin arka plan rengini JS ile kaldırma.
+
+    Contact Form: Çoklu form alanları, checkbox doğrulamaları ve form başarıyla gönderildiğinde ekranda beliren JS modal (açılır pencere) yapımı.
+
+Seviye 2: Matematik, Tarih, Veri Tipleri ve Dinamik UI
+
+İşin içine algoritmalar, matematiksel hesaplamalar ve string/array operasyonları giriyor.
+
+    Interactive Card Details Form [🎯 Senin Listen]: Kullanıcı input alanına yazı yazdıkça kartın üzerindeki görselleri anlık güncelleme (input event) ve kart numarası aralarına otomatik boşluk bırakma (Input Masking).
+
+    Tip Calculator App [🎯 Senin Listen]: String verileri Number() veya parseFloat() ile sayıya dönüştürme, kişi başı hesaplamalar ve "0'a bölünme" hatasını JS ile engelleme.
+
+    Age Calculator App [🎯 Senin Listen]: Tarih (Date) objesiyle tam zamanlı matematik yapma. Artık yılları ve ayların kaç çektiğini (28/30/31 gün) hesaplayan JS algoritması yazımı.
+
+    Expenses Chart Component [🎯 Senin Listen]: Yerel bir JSON dosyasından harcama verilerini çekip, bu verilere göre grafik barlarının yüksekliğini (style.height) dinamik olarak piksel veya yüzde bazlı hesaplama.
+
+    Coding Bootcamp Testimonials Slider: Bir dizi (array) içerisindeki kullanıcı yorumları ve fotoğrafları arasında ileri/geri butonlarıyla dönme (Carousel mantığı).
+
+    Interactive Pricing Component: Range input (kaydırıcı) değerini okuma, bu değere göre fiyatı anlık değiştirme ve yıllık/aylijk seçimine göre indirim uygulayan matematik motoru.
+
+    Time Tracking Dashboard [🎯 Senin Listen]: İç içe geçmiş (nested) objelerden veri okuma. Günlük, haftalık, aylık butonlarına tıklandığında alt verileri filtreleyip ekrana basma.
+
+    Social Media Dashboard with Theme Switcher [🎯 Senin Listen]: Dark/Light mode geçişi. Kullanıcının seçtiği temayı localStorage içine kaydedip, sayfa yenilendiğinde o temayı hafızadan geri çağırma.
+
+    Conference Ticket Generator: Kullanıcı form verilerini ve yüklediği profil resmini (File API) alarak sayfa üzerinde dinamik bir dijital bilet basma simülasyonu.
+
+    Mortgage Repayment Calculator: Kredi faiz oranları, vade sayıları ve aylık/toplam geri ödeme tutarlarını karmaşık finansal formüllerle hesaplayan gelişmiş form motoru.
+
+    Crowdfunding Product Page: Gelen bağış miktarına göre ilerleme çubuğunu (progress bar) dinamik olarak artıran, modal pencerelerini ve stok durumunu yöneten ara yüz.
+
+Seviye 3: Asenkron JS, API Entegrasyonları ve Gelişmiş Filtreleme
+
+Dış dünyadaki sunucularla (API) konuşma vakti. fetch, async/await ve kompleks veri manipülasyonu.
+
+    Advice Generator App [🎯 Senin Listen]: Üçüncü parti bir API'ye fetch ile istek atıp gelen rastgele tavsiye metnini ve ID'sini DOM'a basma (İlk API deneyimi).
+
+    Newsletter Sign-up Form: Validasyon sonrası sayfayı tamamen manipüle edip başarı ekranına geçme ve girilen e-postayı o ekrana parametre olarak taşıma.
+
+    Job Listings with Filtering [🎯 Senin Listen]: JS array metotlarının (filter, map, every, includes) zirvesi. Tıklanan filtrelere göre iş ilanlarını anlık olarak daraltma algoritması.
+
+    Product List with Cart: Ürün listesinden bir nesneyi sepet nesnesine ekleme, miktarı artırma/azaltma ve sağ paneldeki sepeti anlık güncelleme (Client-side state yönetimi).
+
+    Dictionary Web App [🎯 Senin Listen]: Sözlük API'sinden gelen devasa veri yapısını ayrıştırma, telaffuz ses dosyasını (audio nesnesi kullanarak) JS ile oynatma ve API'den dönen 404 hatalarını ekranda şık bir şekilde yönetme.
+
+    IP Address Tracker [🎯 Senin Listen]: Kullanıcının IP adresini bulma, konum API'sine gönderme ve bu konum verilerini LeafletJS gibi harici bir harita kütüphanesine harita üzerinde odaklanması için parametre olarak geçme.
+
+    Space Tourism Multipage Website [🎯 Senin Listen]: Tek bir HTML veya JSON dosyası üzerinden sekmelere tıklandığında gezegenler, mürettebatlar arası verileri sayfayı yenilemeden (SPA mantığıyla) değiştirme.
+
+    E-commerce Product Page: Resim galerisi yapımı (Lightbox/Görsel değiştirici), sepete ürün ekleme simülasyonu ve sepet açılır kutusunu JS ile yönetme.
+
+    REST Countries API with Color Theme Switcher: Yüzlerce ülkeyi API'den çekip listeleme, arama çubuğundan yazılan kelimeye göre anlık arama yapma ve kıtalara göre filtreleme.
+
+Seviye 4: CRUD Operasyonları, State Makineleri ve Mimari Tasarım
+
+Veriyi ekleme, silme, güncelleme ve uygulamanın tüm çalışma mantığını (State) tek bir merkezden yönetme.
+
+    Todo App [🎯 Senin Listen]: Tam fonksiyonel Todo uygulaması. Görev ekleme, silme, tamamlandı işaretleme, aktif/tamamlananlara göre filtreleme, localStorage senkronizasyonu ve HTML5 Drag and Drop (Sürükle-Bırak) API'si entegrasyonu.
+
+    Interactive Comments Section [🎯 Senin Listen]: İç içe geçmiş sosyal medya yorum ağacı. Bir yoruma yanıt verme, kendi yorumunu silme/düzenleme ve yukarı/aşağı oylama (upvote/downvote) skor mekanizması. (Dizi içinde dizi yönetimi).
+
+    Bookmark Landing Page: Sekmeli (tabbed) içerik yapısı, gelişmiş form kontrolü ve akordeon elemanlarının tek bir çatı altında uyum içinde çalışması.
+
+    Launch Countdown Timer: Zamana karşı yarış. setInterval ve clearInterval kullanarak geri sayım sayacı yapma ve saniyeler değiştikçe DOM'da animasyon tetikleme.
+
+    Multi-Step Form [🎯 Senin Listen]: Adım adım ilerleyen form yapısı. Adımlar arası geçiş kontrolü (1. adım doğrulanmadan 2'ye geçemez), seçilen planlara ve eklentilere göre dinamik bir fatura hesaplama motoru yapımı.
+
+    Entertainment Web App [🎯 Senin Listen]: Netflix klonu. Büyük bir film/dizi verisi içinde arama yapma, türlere göre filtreleme ve her içeriğin "Yer İşareti (Bookmark/Favori)" durumunu tüm uygulamada global olarak senkronize etme.
+
+    Rock, Paper, Scissors Game: Taş, kağıt, makas oyunu. Bilgisayara karşı rastgele hamle ürettiren yapay zeka algoritması, kazanma/kaybetme durum kontrolü ve skor tablosunu hafızada tutma.
+
+    In-browser Markdown Editor: Sol panele yazılan Markdown kodlarını anlık olarak Regex (düzenli ifadeler) ile tarayıp sağ panelde HTML çıktısına dönüştüren editör motoru ve dosya kaydetme sistemi.
+
+    Calculator App: Klasik hesap makinesinin ötesinde; string ifadeleri eval() kullanmadan güvenli matematiksel işleme dökme algoritması ve CSS değişkenlerini JS ile değiştirerek 3 farklı tema sunma.
+
+    Product Feedback App: Tam teşekküllü bir geribildirim yönetim paneli. Kullanıcılar öneri ekleyebilir, düzenleyebilir, silebilir, kategorilere ayırabilir ve oylayabilir (Kompleks CRUD).
+
+    Kanban Task Management App: Trello benzeri devasa bir pano uygulaması. Görevleri sütunlar arasında sürükleme, alt görevleri (subtasks) tamamlama yüzdesi hesaplama ve devasa bir state yapısı yönetimi.
+
+    Audiophile E-commerce Website: Frontend Mentor'un zirve projelerinden biri. Çok sayfalı (veya tek sayfalı devasa mimarili) kulaklık mağazası. Sepet yönetimi, checkout (ödeme adımları) kontrolü ve form validasyonlarının mükemmel birleşimi.

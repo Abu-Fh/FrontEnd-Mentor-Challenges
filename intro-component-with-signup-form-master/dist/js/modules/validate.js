@@ -13,6 +13,7 @@ const validateError = {
         'valid': 'Last name must be valid.'
     },
     'email': {
+        'empty':'Email cannot be empty.',
         'valid': 'Please enter a valid email address.'
     },
     'password': {
@@ -80,7 +81,7 @@ const validateEmail = () => {
         return false;
     }
     if (!re.test(value)) {
-        displayInputError('email', 'valid', lastNameInput);
+        displayInputError('email', 'valid', emailInput);
         return false;
     }
     clearInputError(emailInput);

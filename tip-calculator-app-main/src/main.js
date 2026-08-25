@@ -32,14 +32,15 @@ function validateInputs() {
         return false;
 
     }
+
     return true;
 
 }
 
 function displayResults(tipAmountPerPerson, totalAmountPerPerson) {
 
-    tipCalculatorAmount.textContent = '$' + Math.floor(tipAmountPerPerson * 100) / 100;
-    tipCalculatorTotal.textContent = '$' + Math.floor(totalAmountPerPerson * 100) / 100;
+    tipCalculatorAmount.textContent = '$' + (Math.floor(tipAmountPerPerson * 100) / 100).toFixed(2);
+    tipCalculatorTotal.textContent = '$' + (Math.floor(totalAmountPerPerson * 100) / 100).toFixed(2);
 }
 
 function calculate() {
@@ -55,6 +56,7 @@ function calculate() {
     const tipOptionActive = document.querySelector(".tip-calculator__tip-options-container .active");
 
     if (!tipOptionActive) return;
+    if(tipOptionActive === customTipInput && customTipInput.value === "") return;
 
     const tipAmountPerPerson = parseFloat(billInput.value) / 100 * parseFloat(tipOptionActive.dataset.tip) / parseFloat(peopleInput.value)
     const totalAmountPerPerson = parseFloat(billInput.value) / parseFloat(peopleInput.value) + tipAmountPerPerson;
@@ -103,6 +105,13 @@ document.addEventListener("click", (event) => {
     else if (target === tipCalculatorResetButton) {
 
         tipCalculatorResetButton.classList.add("disabled");
+        if(tipOptionActive){
+
+            tipOptionActive.classList.remove("active");
+
+        }
+        displayResults(0,0);
+        peopleError.textContent = "";
 
     }
 

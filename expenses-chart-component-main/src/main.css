@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 18px;
+  }
+}
+
+@layer components {
+  .main {
+    @apply flex min-h-dvh flex-col justify-center gap-4 bg-red-100 px-6;
+  }
+
+  .balance {
+    @apply flex items-center justify-between gap-4 rounded-lg bg-red-500 px-4 py-6;
+
+    &__info {
+      @apply text-sm text-white;
+    }
+
+    &__total {
+      @apply text-lg text-white;
+    }
+  }
+
+  .expenses {
+    @apply flex flex-col gap-4 rounded-lg bg-white p-4;
+
+    &__heading {
+      @apply text-xl font-bold text-brown-950;
+    }
+
+    &__divider {
+      @apply h-0.5 bg-red-100;
+    }
+
+    &__summary {
+      @apply flex justify-between gap-4;
+    }
+
+    &__summary-label {
+      @apply text-brown-400;
+    }
+
+    &__summary-amount {
+      @apply text-xl font-bold text-brown-950;
+    }
+  }
+}

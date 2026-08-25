@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>notifications-page-main</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Manrope:wght@200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div id="app">
+    <div class="notification">
+      <button class="notification__button" aria-label="Notifications" aria-expanded="false"
+        aria-controls="notification-menu">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="none" stroke="#71717a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-bell">
+          <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+          <path
+            d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+        </svg>
+      </button>
+
+      <div class="notification__menu hidden" id="notification-menu">
+        <div class="notification__header">
+          <div class="notification__header-left">
+            <h2 class="notification__heading">Notifications</h2>
+            <span class="notification__unread-count" aria-label="3 unread notifications">3</span>
+          </div>
+
+          <div class="notification__header-right">
+            <button type="button" class="notification__read-all">
+              Mark all as read
+            </button>
+          </div>
+        </div>
+
+        <div class="notification__main-content" role="list">
+          
+          <div class="skeleton-card hidden">
+            <div class="skeleton-content">
+              <div class="skeleton-avatar"></div>
+
+              <div class="skeleton-body">
+                <div class="skeleton-line full"></div>
+                <div class="skeleton-lines-group">
+                  <div class="skeleton-grid">
+                    <div class="skeleton-line span-2"></div>
+                    <div class="skeleton-line span-1"></div>
+                  </div>
+                  <div class="skeleton-line full"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

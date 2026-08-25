@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Manrope:wght@200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <title>expenses-chart-component-main</title>
+</head>
+
+<body>
+  <div id="app">
+    <main class="main">
+
+      <section class="balance" aria-label="Current Balance">
+        <div class="balance__info">
+          <span class="balance__label">My balance</span>
+          <p class="balance__total"></p>
+        </div>
+
+        <div class="balance__logo">
+          <svg width="72" height="48" viewBox="0 0 72 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+            focusable="false">
+            <g fill="none" fill-rule="evenodd">
+              <circle fill="#382314" cx="48" cy="24" r="24" />
+              <circle stroke="#FFF" stroke-width="2" cx="24" cy="24" r="23" />
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <section class="expenses">
+        <h2 class="expenses__heading">Spending - Last 7 days</h2>
+
+        <div class="expenses__chart-container">
+          <ul class="expenses__chart" role="region" aria-label="Weekly spending bar chart">
+
+            <li class="expenses__bar-wrapper">
+              
+              <span class="expenses__day">mon</span>
+            </li>
+
+            <li class="expenses__bar-wrapper">
+
+              <span class="expenses__day">tue</span>
+            </li>
+
+            <li class="expenses__bar-wrapper">
+
+              <span class="expenses__day">wed</span>
+            </li>
+
+            <li class="expenses__bar-wrapper">
+
+              <span class="expenses__day">thu</span>
+            </li>
+
+            <li class="expenses__bar-wrapper">
+
+              <span class="expenses__day">fri</span>
+            </li>
+
+            <li class="expenses__bar-wrapper">
+ 
+              <span class="expenses__day">sat</span>
+            </li>
+
+            <li class="expenses__bar-wrapper">
+
+              <span class="expenses__day">sun</span>
+            </li>
+
+          </ul>
+        </div>
+
+        <hr class="expenses__divider" aria-hidden="true">
+
+        <div class="expenses__summary">
+
+          <div class="expenses__summary-total">
+            <span class="expenses__summary-label">Total this month</span>
+            <strong class="expenses__summary-amount"></strong>
+          </div>
+
+          <div class="expenses__summary-comparison">
+            <strong class="expenses__summary-percentage"></strong>
+            <span class="expenses__summary-label">from last month</span>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
