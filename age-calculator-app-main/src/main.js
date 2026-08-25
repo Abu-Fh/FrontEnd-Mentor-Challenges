@@ -9,7 +9,7 @@ const ageCalculatorOutputYear = document.querySelector(".age-calculator__output-
 const ageCalculatorOutputMonth = document.querySelector(".age-calculator__output--month");
 const ageCalculatorOutputDay = document.querySelector(".age-calculator__output--day");
 
-const months = {
+const validMaxMonthsDays = {
     1: 31,
     2: 29,
     3: 31,
@@ -27,11 +27,13 @@ const months = {
 const ageErrorsObject = {
     "day-error": {
         "empty": "The field is required",
-        "valid": "Must be a valid day"
+        "valid": "Must be a valid day",
+        "future": "Must be in the past"
     },
     "month-error": {
         "empty": "The field is required",
-        "valid": "Must be a valid month"
+        "valid": "Must be a valid month",
+        "future": "Must be in the past"
     },
     "year-error": {
         "empty": "The field is required",
@@ -42,27 +44,29 @@ const ageErrorsObject = {
 ageCalculatorForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const isDayInputValid = validateDayInput(dayInput, monthInput, yearInput);
-    const isMonthInputValid = validateMonthInput(monthInput, dayInput);
+    const isDayInputValid = validateDayInput(dayInput, monthInput, yearInput, validMaxMonthsDays);
+    const isMonthInputValid = validateMonthInput(monthInput, yearInput);
     const isYearInputValid = validateYearInput(yearInput);
 
     if (!(isMonthInputValid && isDayInputValid && isYearInputValid)) {
         return;
     }
 
-    calculateAge(dayInput, monthInput, yearInput, months);
+    calculateAge(isDayInputValid, isMonthInputValid, isYearInputValid);
 })
 
-function calculateAge(dayInputArg, monthInputArg, yearInputArg, monthsArg) {
+function calculateAge(numberDayInputValueArg, numberMonthInputValueArg, numberYearInputValueArg) {
 
-    const birthDayValue = Number(dayInputArg.value);
-    const birthMontValue = Number(monthInputArg.value);
-    const birthYearValue = Number(yearInputArg.value);
+    const birthDayValue = numberDayInputValueArg;
+    const birthMontValue = numberMonthInputValueArg;
+    const birthYearValue = numberYearInputValueArg;
 
     const today = new Date();
     const dd = String(today.getDate()).padStart(2, '0');
     const mm = String(today.getMonth() + 1).padStart(2, '0');
+
     const todayYear = today.getFullYear();
+    const date = new Date(birthYearValue, birthMontValue - 1, 0).getDate();
 
     const todayDay = Number(dd);
     const todayMonth = Number(mm);
@@ -89,14 +93,15 @@ function calculateAge(dayInputArg, monthInputArg, yearInputArg, monthsArg) {
     if (birthDayValue <= todayDay) {
         dayOutput = todayDay - birthDayValue;
     }
-    else if(birthMontValue === todayMonth){
+    else if (birthMontValue === todayMonth) {
         yearOutput = yearOutput - 1;
         monthOutput = 11;
-        dayOutput = monthsArg[birthMontValue - 1] - birthDayValue + todayDay;
+
+        dayOutput = date - birthDayValue + todayDay;
     }
-    else{
+    else {
         monthOutput = monthOutput - 1;
-        dayOutput = monthsArg[todayMonth - 1] - birthDayValue + todayDay;
+        dayOutput = date - birthDayValue + todayDay;
     }
 
     displayAgeResults(dayOutput, monthOutput, yearOutput);
@@ -112,16 +117,25 @@ function displayAgeResults(dayOutput, monthOutput, yearOutput) {
 }
 
 
-function validateDayInput(dayInputArg, monthInputArg, yearInputArg) {
+function validateDayInput(dayInput, monthInput, yearInput, validMaxMonthsDays) {
 
-    const dayInputValue = dayInputArg.value;
-    const montInputValue = monthInputArg.value;
-    const yearInputValue = yearInputArg.value;
-    const regex = /^\d{2}$/;
+    const dayInputValue = dayInput.value;
+    const montInputValue = monthInput.value;
+    const yearInputValue = yearInput.value;
+    const regex = /^\d{1,2}$/;
 
     const numberDayInputValue = Number(dayInputValue);
+    const numberMonthInputValue = Number(montInputValue);
+    const numberYearInputValue = Number(yearInputValue);
 
-    if (dayInputValue.trim().length === 0) {
+    const today = new Date();
+    const todayDay = today.getDate();
+    const todayMonth = today.getMonth() + 1;
+    const todayYear = today.getFullYear();
+
+    const validYear = new Date(numberYearInputValue, numberMonthInputValue, 0).getDate();
+
+    if (isInputValueEmpty(dayInput)) {
         displayError(dayInput, "day-error", "empty", ageErrorsObject);
         return false;
     }
@@ -129,35 +143,49 @@ function validateDayInput(dayInputArg, monthInputArg, yearInputArg) {
         displayError(dayInput, "day-error", "valid", ageErrorsObject);
         return false;
     }
-    if (montInputValue.trim().length === 0) {
-        if (!(numberDayInputValue >= 1 && numberDayInputValue <= 31)) {
-            displayError(dayInput, "day-error", "valid", ageErrorsObject);
-            return false;
-        }
-    } else {
-        if (!(numberDayInputValue >= 1 && numberDayInputValue <= months[Number(montInputValue)])) {
+    if (1 > numberDayInputValue || 31 < numberDayInputValue) {
+        displayError(dayInput, "day-error", "valid", ageErrorsObject);
+        return false;
+    }
+    //  CHECK VALID MONTH MAX DAYS
+    if (validateMonthInput(monthInput, yearInput)) {
+        if (dayInputValue > validMaxMonthsDays[numberMonthInputValue]) {
             displayError(dayInput, "day-error", "valid", ageErrorsObject);
             return false;
         }
     }
-    if (dayInputValue === "29" && montInputValue === "02") {
-        if (!((yearInputValue % 4 === 0 && yearInputValue % 100 !== 0) || (yearInputValue % 400 === 0))) {
+    //  CHECK LEAP YEAR
+    if (validateMonthInput(monthInput, yearInput) && validateYearInput(yearInput)) {
+        if (dayInputValue > validYear) {
             displayError(dayInput, "day-error", "valid", ageErrorsObject);
             return false;
         }
     }
+    //  CHECK FUTURE
+    if (numberYearInputValue === todayYear && numberMonthInputValue === todayMonth && numberDayInputValue > todayDay) {
+        displayError(dayInput, "day-error", "future", ageErrorsObject);
+        return false;
+    }
+
+
 
     displayError(dayInput, "day-error", null, ageErrorsObject);
-    return true;
+    return numberDayInputValue;
 }
 
-function validateMonthInput(monthInputArg) {
-    const montInputValue = monthInputArg.value;
-    const regex = /^\d{2}$/;
+function validateMonthInput(monthInput, yearInput) {
+    const montInputValue = monthInput.value;
+    const yearInputValue = yearInput.value;
+    const regex = /^\d{1,2}$/;
 
     const numberMonthInputValue = Number(montInputValue);
+    const numberYearInputValue = Number(yearInputValue);
 
-    if (montInputValue.trim().length === 0) {
+    const today = new Date();
+    const todayMonth = today.getMonth() + 1;
+    const todayYear = today.getFullYear();
+
+    if (isInputValueEmpty(monthInput)) {
         displayError(monthInput, "month-error", "empty", ageErrorsObject);
         return false;
     }
@@ -165,32 +193,39 @@ function validateMonthInput(monthInputArg) {
         displayError(monthInput, "month-error", "valid", ageErrorsObject);
         return false;
     }
-    if (!(numberMonthInputValue >= 1 && numberMonthInputValue <= 12)) {
+    if (numberMonthInputValue < 1 || numberMonthInputValue > 12) {
         displayError(monthInput, "month-error", "valid", ageErrorsObject);
         return false;
     }
-    if(montInputValue > today)
+    if (numberYearInputValue === todayYear && numberMonthInputValue > todayMonth) {
+        displayError(monthInput, "month-error", "future", ageErrorsObject)
+        return false;
+    }
 
     displayError(monthInput, "month-error", null, ageErrorsObject);
-    return true;
+    return numberMonthInputValue;
 }
 
-function validateYearInput(yearInputArg) {
-    const yearInputValue = yearInputArg.value;
+function validateYearInput(yearInput) {
+
+    const yearInputValue = yearInput.value;
+
+    const numberYearInputValue = Number(yearInputValue);
+
     const today = new Date();
     const todayYear = today.getFullYear();
 
-    if (yearInputValue.trim().length === 0) {
+    if (isInputValueEmpty(yearInput)) {
         displayError(yearInput, "year-error", "empty", ageErrorsObject);
         return false;
     }
-    if (yearInputValue > todayYear) {
+    if (numberYearInputValue > todayYear) {
         displayError(yearInput, "year-error", "future", ageErrorsObject);
         return false;
     }
 
     displayError(yearInput, "year-error", null, ageErrorsObject);
-    return true;
+    return numberYearInputValue;
 }
 
 function displayError(inputId, inputErrorId, errorType, ageErrorsObject) {
@@ -205,4 +240,16 @@ function displayError(inputId, inputErrorId, errorType, ageErrorsObject) {
     }
 
     return;
+}
+
+function isInputValueEmpty(input) {
+
+    const inputValue = input.value;
+
+    if (inputValue.trim().length === 0) {
+        return true;
+    }
+
+    return false;
+
 }

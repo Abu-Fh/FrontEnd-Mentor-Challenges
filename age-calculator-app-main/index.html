@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>age-calculator-app-main</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Manrope:wght@200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="app" class="app">
+
+    <main class="main">
+
+      <section class="age-calculator" aria-labelledby="heading">
+        <h1 id="heading" class="sr-only">Age Calculator</h1>
+
+        <form class="age-calculator__form" action="#" method="post" novalidate>
+
+          <div class="age-calculator__form-inputs">
+
+            <div class="age-calculator__input-group">
+              <label for="day-input" class="age-calculator__label">Day</label>
+              <input type="text" class="age-calculator__input age-calculator__input--day" id="day-input"
+                placeholder="DD" inputmode="numeric" pattern="[0-9]*" min="1" max="31" aria-describedby="day-error"
+                required>
+              <span class="age-calculator__input-error" id="day-error" aria-live="polite"></span>
+            </div>
+
+            <div class="age-calculator__input-group">
+              <label for="month-input" class="age-calculator__label">Month</label>
+              <input type="text" class="age-calculator__input age-calculator__input--month" id="month-input"
+                placeholder="MM" inputmode="numeric" pattern="[0-9]*" min="1" max="12" aria-describedby="month-error"
+                required>
+              <span class="age-calculator__input-error" id="month-error" aria-live="polite"></span>
+            </div>
+
+            <div class="age-calculator__input-group">
+              <label for="year-input" class="age-calculator__label">Year</label>
+              <input type="text" class="age-calculator__input age-calculator__input--year" id="year-input"
+                placeholder="YYYY" inputmode="numeric" pattern="[0-9]*" aria-describedby="year-error" required>
+              <span class="age-calculator__input-error" id="year-error" aria-live="polite"></span>
+            </div>
+
+          </div>
+
+          <div class="age-calculator__hr-wrapper">
+            <hr aria-hidden="true" class="age-calculator__hr">
+
+            <button class="age-calculator__calculate-button" type="submit" aria-label="Calculate age">
+              <svg class="age-calculator__arrow-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="46"
+                height="44" viewBox="0 0 46 44">
+                <g fill="none" stroke="#FFF" stroke-width="2">
+                  <path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44" />
+                </g>
+              </svg>
+            </button>
+          </div>
+
+          <div class="age-calculator__outputs-container" aria-live="polite">
+
+            <div class="age-calculator__output-wrapper">
+              <output class="age-calculator__output age-calculator__output--year"
+                for="day-input month-input year-input">
+                --
+              </output>
+              <span class="age-calculator__output-text">years</span>
+            </div>
+
+            <div class="age-calculator__output-wrapper">
+              <output class="age-calculator__output age-calculator__output--month"
+                for="day-input month-input year-input">
+                --
+              </output>
+              <span class="age-calculator__output-text">months</span>
+            </div>
+
+            <div class="age-calculator__output-wrapper">
+              <output class="age-calculator__output age-calculator__output--day" for="day-input month-input year-input">
+                --
+              </output>
+              <span class="age-calculator__output-text">days</span>
+            </div>
+
+          </div>
+
+        </form>
+      </section>
+
+    </main>
+
+
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
