@@ -14,13 +14,13 @@
 </head>
 
 <body>
-  <div id="app">
+  <div id="app" class="app">
     <main class="main">
 
       <section class="balance" aria-label="Current Balance">
         <div class="balance__info">
           <span class="balance__label">My balance</span>
-          <p class="balance__total"></p>
+          <p class="balance__total">$921.48</p>
         </div>
 
         <div class="balance__logo">
@@ -40,40 +40,28 @@
         <div class="expenses__chart-container">
           <ul class="expenses__chart" role="region" aria-label="Weekly spending bar chart">
 
-            <li class="expenses__bar-wrapper">
-              
-              <span class="expenses__day">mon</span>
-            </li>
+            <div class="load-animation" role="status">
+              <div class="load-animation__bar">
 
-            <li class="expenses__bar-wrapper">
+              </div>
 
-              <span class="expenses__day">tue</span>
-            </li>
+              <div class="load-animation__bar">
+                
+              </div>
 
-            <li class="expenses__bar-wrapper">
+              <div class="load-animation__bar">
+                
+              </div>
 
-              <span class="expenses__day">wed</span>
-            </li>
+              <div class="load-animation__bar">
+                
+              </div>
 
-            <li class="expenses__bar-wrapper">
-
-              <span class="expenses__day">thu</span>
-            </li>
-
-            <li class="expenses__bar-wrapper">
-
-              <span class="expenses__day">fri</span>
-            </li>
-
-            <li class="expenses__bar-wrapper">
- 
-              <span class="expenses__day">sat</span>
-            </li>
-
-            <li class="expenses__bar-wrapper">
-
-              <span class="expenses__day">sun</span>
-            </li>
+              <div class="load-animation__bar">
+                
+              </div>
+              <span class="sr-only">Loading...</span>
+            </div>
 
           </ul>
         </div>
@@ -88,7 +76,7 @@
           </div>
 
           <div class="expenses__summary-comparison">
-            <strong class="expenses__summary-percentage"></strong>
+            <strong class="expenses__summary-percentage">+2.4%</strong>
             <span class="expenses__summary-label">from last month</span>
           </div>
 
