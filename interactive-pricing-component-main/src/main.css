@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-semibold;
+    font-size: 0.9375rem;
+  }
+
+  body {
+    @apply min-h-dvh bg-slate-100;
+  }
+}
+
+@layer components {
+  .main {
+    @apply flex flex-col items-center justify-center gap-16 bg-slate-100 p-6 pt-20;
+    background-image: url("./assets/pattern-circles.svg");
+    background-position: 50% 10%;
+    background-repeat: no-repeat;
+
+    @screen sm {
+      @apply gap-24;
+    }
+
+    &__heading {
+      @apply text-center text-xl font-extrabold text-slate-800;
+    }
+
+    &__description {
+      @apply mt-2 text-center text-slate-400;
+    }
+  }
+
+  .pricing-card {
+    @apply w-full max-w-2xl rounded-lg bg-white;
+
+    &__slider-container {
+      @apply flex flex-col items-center gap-10 px-6 py-8;
+
+      @screen sm {
+        @apply grid grid-cols-2 grid-rows-3 gap-12 px-12 py-12;
+      }
+    }
+
+    &__pageviews-display {
+      @apply flex w-full items-center justify-between;
+    }
+
+    &__pageviews-text {
+      @apply w-full text-center font-extrabold uppercase text-slate-400;
+
+      @screen sm {
+        @apply w-fit text-lg;
+      }
+    }
+
+    &__pageviews-input {
+      @apply w-full;
+      appearance: none;
+
+      @screen sm{
+        @apply col-span-2;
+      }
+
+      &::-moz-range-thumb {
+        @apply h-6 w-6 rounded-full border-none bg-green-400 p-1 shadow-xl;
+        background-image: url("./assets/icon-slider.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+
+        @screen sm {
+          @apply h-9 w-9;
+        }
+
+        &:hover {
+          @apply bg-slate-400;
+        }
+      }
+
+      &::-webkit-slider-thumb {
+        @apply -mt-4 h-10 w-10 rounded-full border-none bg-green-400 p-1 shadow-xl;
+        background-image: url("./assets/icon-slider.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        appearance: none;
+      }
+
+      &::-moz-range-progress {
+        @apply h-2 rounded-full bg-green-100;
+
+        @screen sm {
+          @apply h-3;
+        }
+      }
+
+      &::-webkit-progress-bar {
+        @apply h-2 rounded-full bg-green-100;
+      }
+
+      &::-moz-range-track {
+        @apply h-2 rounded-full bg-slate-200;
+
+        @screen sm {
+          @apply h-3;
+        }
+      }
+
+      &::-webkit-slider-runnable-track {
+        @apply h-2 rounded-full bg-slate-200;
+      }
+    }
+
+    &__bill-announce {
+      @apply flex items-center gap-2;
+
+      @screen sm {
+        @apply col-start-2 col-end-3 row-start-1 row-end-2;
+      }
+
+      &--desktop {
+        @apply hidden;
+
+        @screen sm {
+          @apply flex;
+        }
+      }
+
+      & > span {
+        @apply text-sm font-extrabold text-slate-400;
+
+        @screen sm {
+          @apply text-base;
+        }
+      }
+    }
+
+    &__price {
+      @apply text-4xl font-extrabold text-slate-800;
+
+      @screen sm {
+        @apply text-5xl;
+      }
+    }
+
+    &__billing-wrapper {
+      @apply me-4 ms-auto flex flex-wrap items-center justify-center gap-2;
+
+      @screen sm{
+        @apply col-span-2;
+      }
+    }
+
+    &__billing-label {
+      @apply text-nowrap text-sm text-slate-400;
+
+      @screen sm {
+        @apply text-base;
+      }
+    }
+
+    &__toggle {
+      @apply relative flex w-16 items-center;
+    }
+
+    &__toggle-input {
+      @apply h-8 w-16 rounded-full bg-slate-300 p-1;
+      appearance: none;
+      cursor: pointer;
+      &[data-focused="true"]{
+        @apply bg-slate-400;
+        ~ .pricing-card__toggle-slider {
+          @apply right-0 me-1 ms-auto;
+        }
+      }
+    }
+
+    &__toggle-slider {
+      @apply absolute left-0 ms-1 h-6 w-6 rounded-full bg-white;
+      cursor: pointer;
+    }
+
+    &__billing-discount {
+      @apply rounded-full bg-orange-100 p-1 text-sm text-orange-400;
+
+      @screen sm {
+        > span {
+          @apply not-sr-only;
+        }
+      }
+    }
+
+    &__footer {
+      @apply flex flex-col items-center gap-4 px-6 py-8;
+
+      @screen sm {
+        @apply flex-row items-center justify-between px-12 py-12;
+      }
+    }
+
+    &__trial-features {
+      @apply flex flex-col items-center gap-2;
+
+      @screen sm {
+        @apply items-baseline;
+      }
+    }
+
+    &__feature-item {
+      @apply flex items-center gap-4 text-sm text-slate-400;
+    }
+
+    &__trial-button {
+      @apply rounded-full bg-slate-800 px-10 py-3 font-extrabold text-indigo-200;
+
+      &:hover {
+        @apply text-white;
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>interactive-pricing-component-main</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Manrope:wght@200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <main class="main">
+      <header class="main__header">
+        <h1 class="main__heading">Simple, traffic-based pricing</h1>
+        <p class="main__description">
+          Sign-up for our 30-day trial. <br> No credit card required.
+        </p>
+      </header>
+
+      <section class="pricing-card" aria-labelledby="pricing-card-heading">
+        <h2 id="pricing-card-heading" class="sr-only">
+          Choose your pricing plan
+        </h2>
+
+        <form class="pricing-card__form" action="/subscribe" method="POST" novalidate>
+          <div class="pricing-card__slider-container">
+            <label for="pageviews-slider" class="sr-only">
+              Select pageviews tier
+            </label>
+
+            <div class="pricing-card__pageviews-display" aria-hidden="true">
+              <p class="pricing-card__pageviews-text">
+                <output id="pageviews-output">100K</output> pageviews
+              </p>
+            </div>
+
+            <input type="range" id="pageviews-slider" name="pageviews" class="pricing-card__pageviews-input" min="10000"
+              max="1000000" step="10000" value="100000" aria-describedby="pageviews-bill">
+
+            <p class="pricing-card__bill-announce">
+              <output id="pageviews-bill" class="pricing-card__price" aria-live="polite">$16.00</output>
+              <span>/ month</span>
+            </p>
+
+            <div class="pricing-card__billing-wrapper" role="group" aria-label="Billing frequency selection">
+              <span class="pricing-card__billing-label" id="monthlyLabel">Monthly Billing</span>
+
+              <label class="pricing-card__toggle" for="button-toggle">
+                <span class="sr-only">Toggle yearly billing with twenty five percent discount</span>
+                <input type="checkbox" id="button-toggle" name="yearlyBilling" class="pricing-card__toggle-input" data-focused="false"
+                  role="switch" aria-checked="false" />
+                <span class="pricing-card__toggle-slider" aria-hidden="true"></span>
+              </label>
+
+              <span class="pricing-card__billing-label" id="yearlyLabel">
+                Yearly Billing
+                <strong class="pricing-card__billing-discount" data-discount="25">
+                  -25% <span class="sr-only">discount</span>
+                </strong>
+              </span>
+            </div>
+          </div>
+
+          <hr class="pricing-card__divider" aria-hidden="true">
+
+          <div class="pricing-card__footer">
+            <ul class="pricing-card__trial-features">
+              <li class="pricing-card__feature-item">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="9" height="8">
+                  <path fill="none" stroke="#10B981" stroke-width="2" d="M1 4.134l2.25 2.25L9 1" />
+                </svg>
+                Unlimited Websites
+              </li>
+              <li class="pricing-card__feature-item">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="9" height="8">
+                  <path fill="none" stroke="#10B981" stroke-width="2" d="M1 4.134l2.25 2.25L9 1" />
+                </svg>
+                100% data ownership
+              </li>
+              <li class="pricing-card__feature-item">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="9" height="8">
+                  <path fill="none" stroke="#10B981" stroke-width="2" d="M1 4.134l2.25 2.25L9 1" />
+                </svg>
+                Email Reports
+              </li>
+            </ul>
+
+            <button type="submit" class="pricing-card__trial-button">
+              Start my trial
+            </button>
+          </div>
+
+        </form>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
